@@ -18,19 +18,14 @@ public class TestConfiguration {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ResourceBundle props = ResourceBundle.getBundle("data");
+		ResourceBundle props = ResourceBundle.getBundle("data");		
 		
-		// 1
-		String driver= props.getString("nom");
-		System.out.println(driver);
-		
-		
-		// 2
 		Enumeration<String> keys = props.getKeys();
 		
 		while (keys.hasMoreElements()) {
-			String key = (String) keys.nextElement();
-			System.out.println(key + " : " + props.getString(key));
+			String key = keys.nextElement();
+			String valeur = props.getString(key);
+			System.out.println(key + " : " + valeur);
 			
 		}
 
